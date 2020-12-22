@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+table {border: 1px solid grey;}
+th {border: 1px solid grey;}
+td {border: 1px solid grey;}
+
+</style>
+
+{% if url_list %}
+    <table>
+        <tr><th>#</th><th>URL name</th><th>Status</th></tr>
+
+        {% for url in url_list %}
+        <tr><td>{{ url.id }}</td><td><a href="">{{ url.url_name }}</a></td><td id="status">{{url.status}}</td></tr>
+        {% endfor %}
+
+    </table>
+
+{% else %}
+    <p>No urls are available.</p>
+{% endif %}
+
+<script>
+</script>
+
+
+</body>
+</html>
